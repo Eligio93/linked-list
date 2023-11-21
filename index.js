@@ -117,6 +117,13 @@ class LinkedList {
     let current=this.list;
     if(current==null){
       return "The list is empty"
+    }else{
+      while(current.nextNode !== null){
+        string += '('+current.value+')->';
+        current=current.nextNode;
+      }
+      string+='('+current.value+')-> null';
+      return string
     }
   }
 
@@ -139,7 +146,7 @@ linkedList.pop();
 linkedList.contains(2);
 
 
-console.log(linkedList.find(1));
+console.log(linkedList.toString());
 
 
 
