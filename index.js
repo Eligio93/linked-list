@@ -4,7 +4,7 @@ class LinkedList {
     this.list = null;
     this.listSize = 0;
   }
-
+  // adds a new node containing value to the end of the list
   append(value) {
     if (this.list == null) {
       this.list = new Node(value);
@@ -17,6 +17,7 @@ class LinkedList {
     }
     this.listSize += 1;
   }
+  //adds a new node containing value to the start of the list
   prepend(value) {
     if (this.list == null) {
       this.list = new Node(value);
@@ -25,12 +26,15 @@ class LinkedList {
     }
     this.listSize += 1;
   }
+  //returns the total number of nodes in the list
   size() {
     return this.listSize;
   }
+  //returns the first node in the list
   head() {
     return this.list
   }
+  //returns the last node in the list
   tail() {
     let current = this.list;
     while (current.nextNode !== null) {
@@ -38,6 +42,7 @@ class LinkedList {
     }
     return current
   }
+  //returns the node at the given index
   at(index) {
     if (this.list == null) {
       return "No elements in the list"
@@ -55,6 +60,7 @@ class LinkedList {
       return current
     }
   }
+  //removes the last element from the list
   pop() {
     if (this.list == null) {
       return "The list is empty"
@@ -69,6 +75,7 @@ class LinkedList {
       this.listSize -= 1;
     }
   }
+  //returns true if the passed in value is in the list and otherwise returns false.
   contains(value) {
     if (this.list == null) {
       return "The list is empty"
@@ -90,6 +97,7 @@ class LinkedList {
 
     }
   }
+  //returns the index of the node containing value, or null if not found.
   find(value){
     if(this.list== null){
       return "No elements in the list"
@@ -112,6 +120,7 @@ class LinkedList {
       }
     }
   }
+  //represents your LinkedList objects as strings, so you can print them out and preview them in the console. The format should be: ( value ) -> ( value ) -> ( value ) -> null
   toString(){
     let string="";
     let current=this.list;
