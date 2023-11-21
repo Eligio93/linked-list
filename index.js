@@ -38,6 +38,23 @@ class LinkedList{
     }
     return current
   }
+  at(index){
+    if(this.list == null){
+      return "No elements in the list"
+    }else if(index==0){
+      return this.list
+    }else if(index > this.listSize-1){
+      return "No elements at that index"
+    }else{
+      let cont=0;
+      let current=this.list;
+      while(cont<index){        
+        current=current.nextNode;
+        cont++;
+      }
+      return current
+    }
+  }
 
 }
 class Node{
@@ -50,10 +67,12 @@ class Node{
 // LinkedList.append(3);
 let linkedList= new LinkedList();
 linkedList.append(2);
-linkedList.append(5);
+linkedList.append(3);
+linkedList.append(4);
 linkedList.prepend(1);
+linkedList.append(5);
 
 
-console.log(linkedList.tail());
+console.log(linkedList);
 
 
