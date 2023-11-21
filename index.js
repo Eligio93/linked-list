@@ -90,6 +90,35 @@ class LinkedList {
 
     }
   }
+  find(value){
+    if(this.list== null){
+      return "No elements in the list"
+    }else{
+      let index=0;
+      let current=this.list;
+      while(current.nextNode!==null){
+        if(current.value==value){
+          return index
+          break;
+        }else{
+          current=current.nextNode
+          index++;
+        }
+      }
+      if(current.value==value){
+        return index
+      }else{
+        return null
+      }
+    }
+  }
+  toString(){
+    let string="";
+    let current=this.list;
+    if(current==null){
+      return "The list is empty"
+    }
+  }
 
 }
 class Node {
@@ -110,7 +139,7 @@ linkedList.pop();
 linkedList.contains(2);
 
 
-console.log(linkedList.contains(4));
+console.log(linkedList.find(1));
 
 
 
