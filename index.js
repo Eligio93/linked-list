@@ -55,6 +55,20 @@ class LinkedList{
       return current
     }
   }
+  pop(){
+    if(this.list==null){
+      return "The list is empty"
+    }else{
+      let current=this.list;
+      let prev=current;
+      while(current.nextNode !== null){ 
+        prev=current;      
+        current=current.nextNode
+      }
+      prev.nextNode=null;
+      this.listSize-=1;
+    }
+  }
 
 }
 class Node{
@@ -71,8 +85,10 @@ linkedList.append(3);
 linkedList.append(4);
 linkedList.prepend(1);
 linkedList.append(5);
+linkedList.pop();
 
 
-console.log(linkedList);
+console.log(linkedList.list);
+
 
 
