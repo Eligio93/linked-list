@@ -28,6 +28,16 @@ class LinkedList{
   size(){
     return this.listSize;
   }
+  head(){
+    return this.list
+  }
+  tail(){
+    let current=this.list;
+    while(current.nextNode!== null){
+      current=current.nextNode
+    }
+    return current
+  }
 
 }
 class Node{
@@ -44,6 +54,6 @@ linkedList.append(5);
 linkedList.prepend(1);
 
 
-console.log(linkedList.size());
+console.log(linkedList.tail());
 
 
