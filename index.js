@@ -2,7 +2,7 @@ class LinkedList{
 
   constructor(){
     this.list=null;
-    this.size=0;
+    this.listSize=0;
   }
 
   append(value){
@@ -15,7 +15,7 @@ class LinkedList{
       }
       current.nextNode=new Node(value)
   }
-  this.size+=1;   
+  this.listSize+=1;   
   }
   prepend(value){
     if(this.list==null){
@@ -23,7 +23,10 @@ class LinkedList{
     }else{
       this.list=new Node(value,this.list)
     }
-    this.size+=1;
+    this.listSize+=1;
+  }
+  size(){
+    return this.listSize;
   }
 
 }
@@ -41,6 +44,6 @@ linkedList.append(5);
 linkedList.prepend(1);
 
 
-console.log(linkedList.list);
+console.log(linkedList.size());
 
 
