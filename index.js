@@ -17,7 +17,15 @@ class LinkedList{
   }
   this.size+=1;   
   }
-  
+  prepend(value){
+    if(this.list==null){
+      this.list=new Node(value);
+    }else{
+      this.list=new Node(value,this.list)
+    }
+    this.size+=1;
+  }
+
 }
 class Node{
   constructor(value=null,nextNode=null){
@@ -30,8 +38,9 @@ class Node{
 let linkedList= new LinkedList();
 linkedList.append(2);
 linkedList.append(5);
+linkedList.prepend(1);
 
 
-console.log(linkedList.size);
+console.log(linkedList.list);
 
 
